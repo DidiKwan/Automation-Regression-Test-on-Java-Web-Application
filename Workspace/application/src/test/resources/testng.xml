@@ -1,0 +1,48 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="1">
+  <parameter name="User-Name" value="Testing001" />
+  <parameter name="ChromeDriver" value="C:/Users/Username/Desktop/Workspace/chromedriver.exe" />
+  <parameter name="Download-Folder" value="C:/Users/Username/Downloads" />
+  <parameter name="Email" value="Username@externals.company.com" />
+
+  <!--  If you don't need to switch on the season period list, comment out the switch parameter
+    Find a Trade Meeting that is Exported to ERP
+    Find a Customer No is in an Open Trade Meeting for the Order Form
+    If current production don't have Open Trade Meeting, just find a normal customer for Order & Service -->
+
+  <test name="TW">
+    <parameter name="Switch" value = "2023" />
+    <parameter name="Trade-Meeting" value="TM23Q2_early" />
+    <parameter name="Customer-No" value="7700000018" />
+    <classes>
+      <class name="RegressionTestTW" />
+    </classes>
+  </test>
+
+  <test name="HK">
+    <!-- <parameter name="Switch" value = "SS23" /> -->
+    <parameter name="Trade-Meeting" value="23PQ2 PFQ1 1st Adv PR" />
+    <parameter name="Customer-No" value="8000000633" />
+    <classes>
+      <class name="RegressionTestHK" />
+    </classes>
+  </test>
+
+  <test name="KR">
+    <!-- <parameter name="Switch" value = "SS23" /> -->
+    <parameter name="Trade-Meeting" value="23SA-P10_SS23Q1 TM (7-1)" />
+    <parameter name="Customer-No" value="7800000035" />
+    <classes>
+      <class name="RegressionTestKR" />
+    </classes>
+  </test>
+
+  <test name="CN">
+    <parameter name="Switch" value = "2023Q2" />
+    <parameter name="Trade-Meeting" value="23Q2 NMD PF TM" />
+    <parameter name="Customer-No" value="9514720000" />
+    <classes>
+      <class name="RegressionTestCN" />
+    </classes>
+  </test>
+</suite>
